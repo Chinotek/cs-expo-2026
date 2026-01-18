@@ -1,14 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
 });
 
@@ -25,9 +22,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${jetbrainsMono.variable} antialiased bg-zinc-800 text-purple-500`}
       >
-        {children}
+        <div className="mx-auto p-4 sm:max-w-xl md:max-w-3xl lg:max-w-5xl xl:max-w-7xl ">
+          <Navbar />
+          {children}
+          <Footer />
+          <h1 className="text-base text-center p-4">
+            &copy; {new Date().getFullYear()} CS Expo. All rights reserved.
+          </h1>
+        </div>
       </body>
     </html>
   );
