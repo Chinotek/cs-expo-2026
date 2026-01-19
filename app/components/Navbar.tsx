@@ -4,11 +4,11 @@ import React from "react";
 
 export default function Navbar() {
   return (
-    <nav className="flex items-center justify-between py-2.5 xl:py-4">
+    <nav className="sticky top-0 z-50 flex items-center justify-between py-4 bg-zinc-800">
       <Link href="/" className="flex items-center gap-2">
         <Globe />
         <span className="text-md tracking-wider font-bold xl:text-lg">
-          CS Expo 2025
+          CS Expo 2026
         </span>
       </Link>
       <div className="flex items-center">
