@@ -19,17 +19,17 @@ export default function EventsSection() {
     href: string;
   }) {
     return (
-      <div className="h-90 flex flex-col items-center shadow-lg">
-        <div className="h-1/2">
+      <div className="flex flex-col items-center shadow-lg rounded-lg overflow-hidden">
+        <div className="w-full">
           <Image
             src={imageSrc}
             alt={alt}
             width={400}
             height={200}
-            className="w-full h-full object-cover rounded-t-lg"
+            className="w-full h-auto object-cover"
           />
         </div>
-        <div className="h-1/2 p-4 flex flex-col items-start justify-evenly bg-zinc-900 rounded-b-lg">
+        <div className="w-full p-4 flex flex-col items-start justify-evenly bg-zinc-900">
           <Link
             className="text-lg font-bold hover:text-purple-300 lg:text-xl"
             href={href}
