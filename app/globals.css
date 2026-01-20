@@ -1,5 +1,20 @@
 @import "tailwindcss";
 
+@keyframes scroll-carousel {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.carousel-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-carousel 30s linear infinite;
+}
+
 :root {
   --background: var(--color-zinc-800) !important;
   --foreground: var(--color-purple-500) !important;
