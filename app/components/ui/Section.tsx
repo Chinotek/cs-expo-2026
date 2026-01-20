@@ -8,7 +8,7 @@ export default function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section className={`h-screen w-full ${className ?? ""}`}>
+    <section className={`min-h-screen w-full ${className ?? ""}`}>
       {children}
     </section>
   );
