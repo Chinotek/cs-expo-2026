@@ -1,6 +1,6 @@
 "use client";
-import { ChevronDown, Globe } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import React, { useState, useEffect } from "react";
 
 export default function Navbar() {
@@ -17,13 +17,7 @@ export default function Navbar() {
   }, [open]);
 
   return (
-    <nav className="sticky top-0 z-50 flex items-center justify-between py-4 bg-zinc-800">
-      <Link href="/" className="flex items-center gap-2">
-        <Globe />
-        <span className="text-md tracking-wider font-bold xl:text-lg">
-          CS Expo 2026
-        </span>
-      </Link>
+    <nav className="rounded-xl border-chicago sticky top-0 z-50 flex items-center justify-center py-4 bg-chicago">
       <div className="flex items-center">
         {/* Hamburger/X Icon */}
         <button
@@ -48,15 +42,24 @@ export default function Navbar() {
           />
         </button>
         {/* Desktop Nav */}
-        <ul className="hidden lg:flex lg:items-center lg:gap-6 xl:text-lg xl:gap-10">
+        <ul className="hidden lg:flex lg:items-center lg:gap-12 xl:text-lg">
+          <li>
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/logo.png"
+                alt="Logo"
+                width={70}
+                height={70}
+                className="bg-transparent"
+                style={{ backgroundColor: "transparent" }}
+              />
+            </Link>
+          </li>
           <li>
             <Link
               href=""
               className="flex items-center gap-2 hover:text-purple-300"
             >
-              <span>
-                <ChevronDown />
-              </span>
               Events
             </Link>
           </li>
@@ -65,9 +68,6 @@ export default function Navbar() {
               href=""
               className="flex items-center gap-2 hover:text-purple-300"
             >
-              <span>
-                <ChevronDown />
-              </span>
               Projects
             </Link>
           </li>
@@ -82,9 +82,9 @@ export default function Navbar() {
           <li>
             <Link
               href=""
-              className=" flex items-center gap-2 hover:text-purple-300"
+              className="flex items-center gap-2 hover:text-purple-300"
             >
-              About
+              Gallery
             </Link>
           </li>
           <li>
@@ -92,7 +92,15 @@ export default function Navbar() {
               href=""
               className="flex items-center gap-2 hover:text-purple-300"
             >
-              Gallery
+              Hall of Fame
+            </Link>
+          </li>
+          <li>
+            <Link
+              href=""
+              className=" flex items-center gap-2 hover:text-purple-300"
+            >
+              About
             </Link>
           </li>
         </ul>
@@ -110,9 +118,6 @@ export default function Navbar() {
                 className="flex items-center gap-2 hover:text-purple-300"
                 onClick={() => setOpen(false)}
               >
-                <span>
-                  <ChevronDown />
-                </span>
                 Events
               </Link>
             </li>
@@ -122,9 +127,6 @@ export default function Navbar() {
                 className="flex items-center gap-2 hover:text-purple-300"
                 onClick={() => setOpen(false)}
               >
-                <span>
-                  <ChevronDown />
-                </span>
                 Projects
               </Link>
             </li>
@@ -143,7 +145,7 @@ export default function Navbar() {
                 className="flex items-center gap-2 hover:text-purple-300"
                 onClick={() => setOpen(false)}
               >
-                About
+                Gallery
               </Link>
             </li>
             <li>
@@ -152,7 +154,16 @@ export default function Navbar() {
                 className="flex items-center gap-2 hover:text-purple-300"
                 onClick={() => setOpen(false)}
               >
-                Gallery
+                Hall of Fame
+              </Link>
+            </li>
+            <li>
+              <Link
+                href=""
+                className="flex items-center gap-2 hover:text-purple-300"
+                onClick={() => setOpen(false)}
+              >
+                About
               </Link>
             </li>
           </ul>

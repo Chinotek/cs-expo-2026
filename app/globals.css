@@ -8,7 +8,9 @@
     transform: translateX(-50%);
   }
 }
-
+@theme {
+  --color-chicago: #585a5b;
+}
 .carousel-track {
   display: flex;
   width: max-content;
